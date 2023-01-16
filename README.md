@@ -384,7 +384,7 @@ Goerli testnet verifier contract address:
     
 <details>
  <summary>
-<h3> Secondly, call the method  <code>.hasSoul()</code> to check a wallet address for soulbound </h3> (<i>click to expand</i>) </summary>
+<h3> Secondly, call the method  <code>.hasSoul()</code> to check a wallet for soulbound </h3> (<i>click to expand</i>) </summary>
 
 ```javascript
 const soulbound = new web3.eth.Contract(abi, soulboundContractAddress);
@@ -394,7 +394,7 @@ const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
 
 <details>
  <summary>
-<h3> Finally, token gate some key functionality of your protocol with a simple check for our SBT </h3> (<i>click to expand</i>) </summary>
+<h3> Finally, token gate some key functionality of your protocol with a check for our SBT </h3> (<i>click to expand</i>) </summary>
 
 ```javascript
     const checkSBT = async () => {
