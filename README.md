@@ -394,7 +394,7 @@ const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
 
 <details>
  <summary>
-<h3> Lastly, token gate the functionality of your app with a check for our SBT </h3> (<i>click to expand</i>) </summary>
+<h3> Lastly, token gate key functionality of your app with a check for our SBT </h3> (<i>click to expand</i>) </summary>
 
 ```javascript
     const checkSBT = async () => {
