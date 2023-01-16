@@ -15,7 +15,7 @@ Goerli testnet verifier contract address:
 3 step integration:
 --------
 <details>
- <summary> <h3> Firstly, define an <code>ABI</code> varable for our contract: </h3> (<i>click to expand</i>)</summary>
+ <summary> <h3> Firstly, define the <code>ABI</code> varable for our contract: </h3> (<i>click to expand</i>)</summary>
   <!-- have to be followed by an empty line! -->
 
  ```javascript
