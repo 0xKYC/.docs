@@ -1,7 +1,7 @@
 0xKYC Implementation Documentation
 ========
 
-0xKYC is built with ease of implementation in mind, with a simple "token gating" system your protocol can ensure your users are not OFAC sanctioned and unique! This is signalled with a 0xKYC soulbound token (SBT). Bellow is all you need to get started and implement a new feature! (we will demo this in JS + web3.js)
+To implement 0xKYC all you need is a simple "token gating" system added to your app and you can ensure your users are not OFAC sanctioned and are unique! This is signalled with a 0xKYC soulbound token (SBT). Bellow is the code needed to get started and implement your new feature! (we will demo this in JS + web3.js)
 
 Goerli testnet soulbound contract address:
 
@@ -430,7 +430,7 @@ Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: support@0xkyc.id
+We have a mailing list located at: contact@0xkyc.id
 
 License
 -------
