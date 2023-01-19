@@ -429,7 +429,7 @@ Support
 -------
 
 If you are having issues, please let us know.
-We have a mailing list located at: contact@0xkyc.id
+We have a mailing list located at: support@0xkyc.id
 
 License
 -------
