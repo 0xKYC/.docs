@@ -422,7 +422,7 @@ const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
 
 
 
-On chain verification Explained
+On chain verification
 --------
 <h3> With Code (JS)</h3>
 
