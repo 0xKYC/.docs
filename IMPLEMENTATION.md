@@ -10,6 +10,16 @@ Goerli testnet soulbound contract address:
 Goerli testnet verifier contract address:
 
     0x245C4D4b735d034121d096CC5b8d10a80Fdf44c4
+    
+Mumbai testnet soulbound contract address:
+
+    0x0FbA0f5bBEc4e5De96d0a7765D882279519ACE92
+    
+Mumbai testnet verifier contract address:
+
+    0x231d35700C10FB2D2F0Ec4f1bc9EeDE024A005fc
+    
+    
 
 
 3 step integration:
