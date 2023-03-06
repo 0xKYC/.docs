@@ -22,11 +22,11 @@ Mumbai testnet verifier contract address:
     
 
 
-3 step integration:
+3 step integration (Frontend Token-gate):
 --------
 *NOTE: this implementation will not token gate the smart contract side, please contact to discuss architecture and deeper token gates!* 
 <details>
- <summary> <h3> Firstly, define the <code>ABI</code> varable for our contract: </h3> (<i>click to expand</i>)</summary>
+ <summary> Firstly, define the <code>ABI</code> varable for our contract: (<i>click to expand</i>)</summary>
   <!-- have to be followed by an empty line! -->
 
  ```javascript
@@ -40,7 +40,7 @@ const abi = [ { "inputs": [ { "internaltype": "string", "name": "name_", "type":
     
 <details>
  <summary>
-<h3> Secondly, call the method  <code>.hasSoul()</code> to check a wallet for soulbound </h3> (<i>click to expand</i>) </summary>
+Secondly, call the method  <code>.hasSoul()</code> to check a wallet for soulbound (<i>click to expand</i>) </summary>
 
 ```javascript
 const soulbound = new web3.eth.Contract(abi, soulboundContractAddress);
@@ -50,13 +50,12 @@ const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
 
 <details>
  <summary>
-<h3> Lastly, token gate the key functionality of your protocol with a check for our SBT </h3> (<i>click to expand</i>) </summary>
+Lastly, token gate the key functionality of your protocol with a check for our SBT  (<i>click to expand</i>) </summary>
 
 ```javascript
     const checkSBT = async () => {
       try {
         if (address) {
-          setLoading(true);
           const isVerified = await checkForSBT(address);
 
           if (isVerified) {
@@ -64,17 +63,44 @@ const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
           } else {
             setIsAuth(false);
           }
-          setLoading(false);
         }
       } catch (err) {
-        setLoading(false);
-        console.error(err);
+        // handle error
       }
     };
    ```
 </details> 
 
 
+Smart Contract Implementation (Solidity Modifier):
+--------
+<details>
+ <summary>
+Here is an example of a solidity modifier that gates a core function, msg.sender must have a 0xKYC soulbound (<i>click to expand</i>) </summary>
+
+```solidity
+
+interface 0xKYC {
+    function hasSoul(address _soul) external view returns (bool);
+}
+
+contract YourContractUsing0xKYC {
+    0xKYC public my0xKYC;
+
+    constructor(address 0xKYCAddress) {
+        my0xKYC = 0xKYC(0xKYCAddress);
+    }
+
+    modifier hasSoul {
+        require(my0xKYC.hasSoul(msg.sender), "Soul does not exist");
+        _;
+    }
+
+    function coreFunction() public hasSoul {
+        // do something
+    }
+   ```
+</details> 
 
 
 On chain verification
