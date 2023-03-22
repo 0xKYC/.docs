@@ -29,8 +29,8 @@ Wallet address that has soulbound on all networks:
 3 step integration (Frontend Token-gate):
 --------
 *NOTE: this implementation will not token gate the smart contract side, please contact to discuss architecture and deeper token gates!* 
-<details>
- <summary> Firstly, define the <code>ABI</code> varable for our contract: (<i>click to expand</i>)</summary>
+
+ Firstly, define the <code>ABI</code> varable for our contract: 
   <!-- have to be followed by an empty line! -->
 
  ```javascript
@@ -38,23 +38,15 @@ const abi = [ { "inputs": [ { "internaltype": "string", "name": "name_", "type":
 ```
 
 
-</details>
 
-  
-    
-<details>
- <summary>
-Secondly, call the method  <code>.hasSoul()</code> to check a wallet for soulbound (<i>click to expand</i>) </summary>
+Secondly, call the method  <code>.hasSoul()</code> to check a wallet for soulbound:
 
 ```javascript
 const soulbound = new web3.eth.Contract(abi, soulboundContractAddress);
 const hasSoul = await soulbound.methods.hasSoul(walletAddress).call();
    ```
-</details> 
 
-<details>
- <summary>
-Lastly, token gate the key functionality of your protocol with a check for our SBT  (<i>click to expand</i>) </summary>
+Lastly, token gate the key functionality of your protocol with a check for our SBT:
 
 ```javascript
     const checkSBT = async () => {
@@ -73,14 +65,13 @@ Lastly, token gate the key functionality of your protocol with a check for our S
       }
     };
    ```
-</details> 
+
 
 
 Smart Contract Implementation (Solidity Modifier):
 --------
-<details>
- <summary>
-Here is an example of a solidity modifier that gates a core function, msg.sender must have a 0xKYC soulbound (<i>click to expand</i>) </summary>
+
+Here is an example of a solidity modifier that gates a core function, msg.sender must have a 0xKYC soulbound 
 
 ```solidity
 
@@ -104,7 +95,7 @@ contract YourContractUsing0xKYC {
         // do something
     }
    ```
-</details> 
+
 
 
 On chain verification
@@ -112,7 +103,7 @@ On chain verification
 <h3> With Code (JS)</h3>
 
 
- <details> <summary> Define ABI for both verifier and 0xKYC soulbound contracts (<i>click to expand</i>) </summary> 
+ Define ABI for both verifier and 0xKYC soulbound contracts (<i>click to expand</i>)
         
  ```javascript
         
@@ -122,9 +113,8 @@ On chain verification
 const soulboundAbi = [ { "inputs": [ { "internaltype": "string", "name": "name_", "type": "string" }, { "internaltype": "string", "name": "symbol_", "type": "string" } ], "statemutability": "nonpayable", "type": "constructor" }, { "anonymous": false, "inputs": [ { "indexed": false, "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "burn", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "mint", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": true, "internaltype": "address", "name": "previousowner", "type": "address" }, { "indexed": true, "internaltype": "address", "name": "newowner", "type": "address" } ], "name": "ownershiptransferred", "type": "event" }, { "anonymous": false, "inputs": [ { "indexed": false, "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "update", "type": "event" }, { "inputs": [], "name": "_name", "outputs": [ { "internaltype": "string", "name": "", "type": "string" } ], "statemutability": "view", "type": "function" }, { "inputs": [], "name": "_symbol", "outputs": [ { "internaltype": "string", "name": "", "type": "string" } ], "statemutability": "view", "type": "function" }, { "inputs": [], "name": "_totalsbt", "outputs": [ { "internaltype": "uint256", "name": "", "type": "uint256" } ], "statemutability": "view", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "burn", "outputs": [], "statemutability": "nonpayable", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "getsbtdata", "outputs": [ { "internaltype": "uint256[2]", "name": "", "type": "uint256[2]" }, { "internaltype": "uint256[2][2]", "name": "", "type": "uint256[2][2]" }, { "internaltype": "uint256[2]", "name": "", "type": "uint256[2]" }, { "internaltype": "uint256[3]", "name": "", "type": "uint256[3]" } ], "statemutability": "view", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "_soul", "type": "address" } ], "name": "hassoul", "outputs": [ { "internaltype": "bool", "name": "", "type": "bool" } ], "statemutability": "view", "type": "function" }, { "inputs": [ { "internaltype": "uint256[2]", "name": "a", "type": "uint256[2]" }, { "internaltype": "uint256[2][2]", "name": "b", "type": "uint256[2][2]" }, { "internaltype": "uint256[2]", "name": "c", "type": "uint256[2]" }, { "internaltype": "uint256[3]", "name": "input", "type": "uint256[3]" }, { "internaltype": "address", "name": "to", "type": "address" } ], "name": "mint", "outputs": [], "statemutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "name", "outputs": [ { "internaltype": "string", "name": "", "type": "string" } ], "statemutability": "view", "type": "function" }, { "inputs": [], "name": "owner", "outputs": [ { "internaltype": "address", "name": "", "type": "address" } ], "statemutability": "view", "type": "function" }, { "inputs": [], "name": "renounceownership", "outputs": [], "statemutability": "nonpayable", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [ { "internaltype": "string", "name": "", "type": "string" } ], "statemutability": "view", "type": "function" }, { "inputs": [], "name": "totalsbt", "outputs": [ { "internaltype": "uint256", "name": "", "type": "uint256" } ], "statemutability": "view", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "newowner", "type": "address" } ], "name": "transferownership", "outputs": [], "statemutability": "nonpayable", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "_soul", "type": "address" }, { "components": [ { "internaltype": "uint256[2]", "name": "a", "type": "uint256[2]" }, { "internaltype": "uint256[2][2]", "name": "b", "type": "uint256[2][2]" }, { "internaltype": "uint256[2]", "name": "c", "type": "uint256[2]" }, { "internaltype": "uint256[3]", "name": "input", "type": "uint256[3]" } ], "internaltype": "struct zksbt. Proof", "name": "_souldata", "type": "tuple" } ], "name": "updatesbt", "outputs": [ { "internaltype": "bool", "name": "", "type": "bool" } ], "statemutability": "nonpayable", "type": "function" }, { "inputs": [ { "internaltype": "address", "name": "_soul", "type": "address" }, { "internaltype": "address", "name": "verifieraddress", "type": "address" } ], "name": "validateattribute", "outputs": [ { "internaltype": "bool", "name": "", "type": "bool" } ], "statemutability": "view", "type": "function" } ]
     
 ```  
-</details>
-<details>
-<summary> Next, get proof from the wallet address you want to verifiy by calling the method <code>.getSBTData</code> inside the soulbound contract  and then call <code>.verifyTx</code> from the verifier contract with this proof data (<i>click to expand</i>) </summary>
+
+Next, get proof from the wallet address you want to verifiy by calling the method <code>.getSBTData</code> inside the soulbound contract and then call <code>.verifyTx</code> from the verifier contract with this proof data (<i>click to expand</i>)
 
 ```javascript
     const soulbound = new web3.eth.Contract(soulboundAbi, soulboundContractAddress);
@@ -134,7 +124,7 @@ const soulboundAbi = [ { "inputs": [ { "internaltype": "string", "name": "name_"
     const inputs = sbtData[3];
     const isVerified = await verifier.methods.verifyTx(proof, inputs).call();
 ```
-</details> 
+
 
 <h3> Without Code (etherscan) </h3>
 
