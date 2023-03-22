@@ -3,19 +3,19 @@
 
 To implement 0xKYC all you need is a simple "token gating" system added to your app and you can ensure your users are not OFAC sanctioned and are unique! This is signalled with a 0xKYC soulbound token (SBT). Below is the code needed to get started and implement your new feature! (we will demo this in JS + web3.js)
 
-Goerli Testnet soulbound contract address:
+Goerli testnet soulbound contract address:
 
     0x275D4440342272dB27be480B127410C8bbf78e14
     
-Goerli Testnet verifier contract address:
+Goerli testnet verifier contract address:
 
     0x245C4D4b735d034121d096CC5b8d10a80Fdf44c4
     
-Mumbai Testnet soulbound contract address:
+Mumbai testnet soulbound contract address:
 
     0x0FbA0f5bBEc4e5De96d0a7765D882279519ACE92
     
-Mumbai Testnet verifier contract address:
+Mumbai testnet verifier contract address:
 
     0x231d35700C10FB2D2F0Ec4f1bc9EeDE024A005fc
     
