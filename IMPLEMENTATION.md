@@ -19,6 +19,10 @@ Mumbai testnet verifier contract address:
 
     0x231d35700C10FB2D2F0Ec4f1bc9EeDE024A005fc
     
+Wallet address that has soulbound on all networks:
+
+    0x1dd473E7bC928dC5b9d72d05342117288CB5b511
+    
     
 
 
