@@ -5,7 +5,7 @@ To implement 0xKYC all you need is a simple "token gating" system added to your 
 
 Goerli testnet soulbound contract address:
 
-    0x275D4440342272dB27be480B127410C8bbf78e14
+    0x4342095B94c3611970F3e298371257CFED89f7Bb
     
 Goerli testnet verifier contract address:
 
@@ -13,7 +13,7 @@ Goerli testnet verifier contract address:
     
 Mumbai testnet soulbound contract address:
 
-    0x0FbA0f5bBEc4e5De96d0a7765D882279519ACE92
+    0x3729E44fCFDCF9B0a6293c697Ff802c14FcFEb46
     
 Mumbai testnet verifier contract address:
 
@@ -111,7 +111,7 @@ On chain verification
 <h3> With Code (JS)</h3>
 
 
- Define ABI for both verifier and 0xKYC soulbound contracts (<i>click to expand</i>)
+ Define ABI for both verifier and 0xKYC soulbound contracts 
         
  ```javascript
         
@@ -122,7 +122,7 @@ const soulboundAbi = [ { "inputs": [ { "internaltype": "string", "name": "name_"
     
 ```  
 
-Next, get proof from the wallet address you want to verifiy by calling the method <code>.getSBTData</code> inside the soulbound contract and then call <code>.verifyTx</code> from the verifier contract with this proof data (<i>click to expand</i>)
+Next, get proof from the wallet address you want to verifiy by calling the method <code>.getSBTData</code> inside the soulbound contract and then call <code>.verifyTx</code> from the verifier contract with this proof data 
 
 ```javascript
     const soulbound = new web3.eth.Contract(soulboundAbi, soulboundContractAddress);
@@ -143,6 +143,23 @@ Next, get proof from the wallet address you want to verifiy by calling the metho
 - Then find the verifier contract on etherscan and paste this proof to check if users proof is valid!
 
 <img src="https://image-hosting-0xkyc.s3.amazonaws.com/Screenshot+2023-01-23+at+12.38.42.png">
+
+
+
+Uniquness Verification (V1)
+--------
+<h3> Uniquness Verification </h3> 
+Every user that goes through our app will be assigned a UUID, this unique identifier will then be assigned and minted onto the blockchain. With every additional wallet our system picks up to be the same user we assign the same UUID, networking individuals accross wallets. The uniquness verification system is based upon a biometric scan done of the user.
+
+<div> </div>
+
+- To query the UUID of a wallet simply call:
+```javascript
+const soulbound = new web3.eth.Contract(abi, soulboundContractAddress);
+const hasSoul = await soulbound.methods.getUUIDData(walletAddress).call();
+```
+
+
 
 
 Support
