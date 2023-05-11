@@ -146,9 +146,9 @@ Next, get proof from the wallet address you want to verifiy by calling the metho
 
 
 
-Uniquness Verification (V1)
+Proof of Uniquness (V1)
 --------
-<h3> Uniquness Verification </h3> 
+<h3> Proof of Uniquness </h3> 
 Every user that goes through our app will be assigned a UUID, this unique identifier will then be assigned and minted onto the blockchain. With every additional wallet our system picks up to be the same user we assign the same UUID, networking individuals accross wallets. The uniquness verification system is based upon a biometric scan done of the user.
 
 <div> </div>
