@@ -126,7 +126,7 @@ Next, get proof from the wallet address you want to verifiy by calling the metho
 
 ```javascript
     const soulbound = new web3.eth.Contract(soulboundAbi, soulboundContractAddress);
-    const verifier = new web3.eth.Contract(verifierAbi, soulboundContractAddress);
+    const verifier = new web3.eth.Contract(verifierAbi, verifierContractAddress);
     const sbtData = await soulbound.methods.getSBTData(walletAddress).call();
     const proof = [sbtData[0], sbtData[1], sbtData[2]];
     const inputs = sbtData[3];
