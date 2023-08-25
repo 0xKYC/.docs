@@ -1,5 +1,8 @@
 0xKYC Implementation Documentation
 ========
+For the most up to date documentation go to docs.0xkyc.id
+
+========
 
 To implement 0xKYC all you need is a simple "token gating" system added to your app and you can ensure your users are not OFAC sanctioned and are unique! This is signalled with a 0xKYC soulbound token (SBT). Below is the code needed to get started and implement your new feature! (we will demo this in JS + web3.js)
 
