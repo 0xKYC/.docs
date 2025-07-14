@@ -55,7 +55,7 @@ The main documentation site provides developer guides and implementation resourc
 - **On-Chain Verification**: Zero-knowledge proof validation
 - **No-Code Etherscan**: Manual verification through blockchain explorers
 
-#### **Public APIs**
+#### **Public APIs (no longer live)**
 - Sandbox API: `https://sandboxapi.0xkyc.id/docs`
 - Production API: `https://api.0xkyc.id/docs`
 - Endpoints for authentication, SBT checking, UUID retrieval, and wallet pairing
@@ -78,18 +78,6 @@ The main organization repository contains multiple projects:
 - **discord-bot**: Discord integration for server verification
 - **0xkyc-1vote-aragon-plugin**: DAO voting plugin (hackathon winner)
 - **mock-uniswap-demo**: Demonstration of SBT integration
-
-#### **Team**
-- **CEO**: Adam Zasada
-- **CTO**: Dylan Wysocki
-- Multi-disciplinary engineering and operations team
-
-#### **Backed By**
-- Outlier Ventures
-- New Order DAO
-- Onfido
-- Hinkal Protocol
-- Scroll Ecosystem
 
 ## 🤖 Discord Bot
 
